@@ -1,14 +1,28 @@
 <html>
     <head>
+        <link rel='stylesheet' href="../../static/style.css" />
+        <link href="https://fonts.googleapis.com/css?family=Poppins:600" rel="stylesheet">
         <title>Logic Gates Visualiser</title>
     </head>
     <body>
         <h1>Logic Gates Visualiser</h1>
         <p>Select a logic gate to see a perceptrons corresponding decision boundary plotted!</p>
-        {% block content %}
-            {% if chart %}
-                <img src="data:image/png;base64, {{chart|safe}}" />
-            {% endif %}
-        {% endblock content %}
+        <div class="Container">
+            <div class="LogicGateOptions">
+                <input type="radio" name="gate" id="AND" checked="checked">
+                <label for="AND">AND</label><br/>
+                <input type="radio" name="gate" id="OR">
+                <label for="OR">OR</label><br/>
+                <input type="radio" name="gate" id="XOR">
+                <label for="XOR">XOR</label>
+            </div>
+            <div class='Plot'>
+                {% block content %}
+                    {% if chart %}
+                        <img src="data:image/png;base64, {{chart|safe}}" />
+                    {% endif %}
+                {% endblock content %}
+            </div>
+        </div>
     </body>
 </html>

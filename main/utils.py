@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+from matplotlib import style
 import base64
 from io import BytesIO
 
@@ -14,8 +15,8 @@ def get_graph():
 
 def get_plot(x_values, y_values, distances_matrix):
     plt.switch_backend('AGG')
-    plt.figure(figsize=(10,5))
-    plt.title('Perceptron Decision Boundary Plot')
+    plt.figure(figsize=(10,7), dpi=50)
+    plt.style.use('dark_background')
     heatmap = plt.pcolormesh(x_values, y_values, distances_matrix)
     plt.colorbar(heatmap)
     plt.tight_layout()
