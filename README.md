@@ -2,7 +2,7 @@
 
 This is a web application where users can select a common logic gate and view the corresponding decision boundary plot when a perception model is trained for its functionality and its explanation. This project was made using Python, HTML, CSS, and the web framework Django.
 
-![Project Screenshot](https://raw.github.com/rosemaryellery/logic-gates-visualiser/master/logicgatesvisualiser.png)
+![Project Screenshot](logicgatevisualiserimage.png)
 
 ## Installation and Usage
 
