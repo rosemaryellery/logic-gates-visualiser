@@ -9,12 +9,16 @@
         <p>Select a logic gate to see a perceptrons corresponding decision boundary plotted!</p>
         <div class="Container">
             <div class="LogicGateOptions">
-                <input type="radio" name="gate" id="AND" checked="checked">
-                <label for="AND">AND</label><br/>
-                <input type="radio" name="gate" id="OR">
-                <label for="OR">OR</label><br/>
-                <input type="radio" name="gate" id="XOR">
-                <label for="XOR">XOR</label>
+                <form method='POST' action="." name="form" value="form">
+                    {% csrf_token %}
+                    <input type="radio" name="gate" id="AND" value="ADD">
+                    <label for="AND">AND</label><br/>
+                    <input type="radio" name="gate" id="OR" value="OR">
+                    <label for="OR">OR</label><br/>
+                    <input type="radio" name="gate" id="XOR" value="XOR">
+                    <label for="XOR">XOR</label>
+                    <button type='submit'>PLOT</button>
+                </form>
             </div>
             <div class='Plot'>
                 {% block content %}
@@ -22,6 +26,12 @@
                         <img src="data:image/png;base64, {{chart|safe}}" />
                     {% endif %}
                 {% endblock content %}
+                {% block title %}
+                    <h1>{{gate_type}} Gate</h1>
+                {% endblock title %}
+                {% block description %}
+                    <p>{{desc}}</p>
+                {% endblock description %}
             </div>
         </div>
     </body>
