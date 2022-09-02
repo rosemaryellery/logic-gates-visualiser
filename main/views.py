@@ -5,12 +5,13 @@ from .utils import get_plot
 
 def index(request):
     gate_type = 'AND'
+    desc = ''
     if request.method == 'POST':
         gate_type = request.POST.get('gate')
     labels = [0, 0, 0, 1]
     if gate_type == 'AND':
         labels = [0, 0, 0, 1]
-        desc = 'As shown in the above plot, the perceptron can plot a clear decision boundary for the AND gate as it linearly-seperable.'
+        desc = 'As shown above, the perceptron model can plot a clear decision boundary for the AND gate as it is linearly-seperable.'
     elif gate_type == 'OR':
         labels = [0, 1, 1, 1]
         desc = 'When trained on an OR gate, the perceptron displays a linear decision boundary.'

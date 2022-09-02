@@ -12,13 +12,16 @@ body{
 
 }
 
-h1 {
+.PageTitle{
     margin-top: 5%;
+    font-size: 3rem;
+    margin-bottom: 0;
 }
 
-p {
-    font-weight: lighter;
+.PageCaption{
+    font-weight: 300;
     margin-bottom: 5%;
+    font-size: 1.2rem;
 }
 
 .Container {
@@ -31,7 +34,6 @@ p {
 
 .LogicGateOptions {
     flex: 1;
-    padding-left: 15%
 }
 
 .Plot {
@@ -52,9 +54,50 @@ label {
     align-items: center;
     text-align: center;
     width: 4.25rem;
+    font-weight: 600;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button {
+    position: relative;
+    font-size: 2rem;
+    border: 2px solid white;
+    background: #21918C;
+    color: white;
+    border-radius: 5px;
+    padding: 1rem 3rem;
+    display: block;
+    align-items: center;
+    text-align: center;
+    width: 15rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+}
+
+button:hover{
+    background: white;
+    color: #21918C;
 }
 
 input[type='radio']:checked + label {
     background-color: white;
     color: black;
+}
+
+.PlotImg {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 5%;
+}
+
+.GateTitle {
+    margin-bottom: 0;
+}
+
+.GateDesc {
+    margin-top: 0;
 }

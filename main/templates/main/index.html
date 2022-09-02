@@ -2,16 +2,19 @@
     <head>
         <link rel='stylesheet' href="../../static/style.css" />
         <link href="https://fonts.googleapis.com/css?family=Poppins:600" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
         <title>Logic Gates Visualiser</title>
     </head>
     <body>
-        <h1>Logic Gates Visualiser</h1>
-        <p>Select a logic gate to see a perceptrons corresponding decision boundary plotted!</p>
+        <h1 class="PageTitle"> Perceptron Logic Gate Visualiser</h1>
+        <p class="PageCaption">Select a logic gate to see a perceptron's corresponding decision boundary plotted!</p>
         <div class="Container">
             <div class="LogicGateOptions">
                 <form method='POST' action="." name="form" value="form">
                     {% csrf_token %}
-                    <input type="radio" name="gate" id="AND" value="ADD">
+                    <input type="radio" name="gate" id="AND" value="AND">
                     <label for="AND">AND</label><br/>
                     <input type="radio" name="gate" id="OR" value="OR">
                     <label for="OR">OR</label><br/>
@@ -23,14 +26,14 @@
             <div class='Plot'>
                 {% block content %}
                     {% if chart %}
-                        <img src="data:image/png;base64, {{chart|safe}}" />
+                        <img class="PlotImg" src="data:image/png;base64, {{chart|safe}}" />
                     {% endif %}
                 {% endblock content %}
                 {% block title %}
-                    <h1>{{gate_type}} Gate</h1>
+                    <h1 class="GateTitle">{{gate_type}} Gate</h1>
                 {% endblock title %}
                 {% block description %}
-                    <p>{{desc}}</p>
+                    <p class="GateDesc">{{desc}}</p>
                 {% endblock description %}
             </div>
         </div>
